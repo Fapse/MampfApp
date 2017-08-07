@@ -15,13 +15,30 @@ class DisplayController: UIViewController {
     var recipeName = String()
     var recipeInstruction = String()
     var recipeContents = String()
+	var test = UIScrollView()
+	
         
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         recipeTitle.text = recipeName;
-        recipeText.text = recipeContents + recipeInstruction
+		
+		recipeText.attributedText = buildRecipeText()
+		
+        //recipeText.text = recipeContents + recipeInstruction
     }
-    
+	
+	private func buildRecipeText() -> NSAttributedString {
+		let myString = recipeName + "\n" + recipeContents + recipeInstruction
+		let myAttributes: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 25.0)!,
+		                                   NSForegroundColorAttributeName: UIColor.red]
+		let myAttrString = NSMutableAttributedString(string: myString)
+		let myRange = NSRange(location: 0, length: recipeName.characters.count)
+		
+		myAttrString.addAttributes(myAttributes, range: myRange)
+		return myAttrString
+	}
+	
     override func viewDidAppear(_ animated: Bool) {
     }
 

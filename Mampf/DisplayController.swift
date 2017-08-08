@@ -19,7 +19,7 @@ class DisplayController: UIViewController {
         
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		recipeText.text = "" //Hack 1/2: Delete standard text
+		recipeText.text = "" //Hack 1/2: Delete standard text.
 	}
 	
 	private func buildRecipeText() -> NSAttributedString {
@@ -37,7 +37,7 @@ class DisplayController: UIViewController {
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		recipeText.attributedText = buildRecipeText() //Hack 2/2: First line of text is displayed
+		recipeText.attributedText = buildRecipeText() //Hack 2/2: First line of text is displayed.
 	}
 
     override func didReceiveMemoryWarning() {

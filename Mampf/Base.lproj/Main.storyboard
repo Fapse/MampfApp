@@ -80,8 +80,8 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-ft-50Q">
-                                <rect key="frame" x="16" y="585" width="49" height="30"/>
-                                <state key="normal" title="Zurück"/>
+                                <rect key="frame" x="16" y="585" width="53" height="30"/>
+                                <state key="normal" title="Zurück!"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Iew-MH-Yyy"/>
                                 </connections>

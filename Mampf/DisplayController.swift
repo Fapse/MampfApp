@@ -10,7 +10,6 @@ import UIKit
 
 class DisplayController: UIViewController {
 
-    @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var recipeText: UITextView!
     var recipeName = String()
     var recipeInstruction = String()
@@ -18,29 +17,28 @@ class DisplayController: UIViewController {
 	var test = UIScrollView()
 	
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		
-        recipeTitle.text = recipeName;
-		
-		recipeText.attributedText = buildRecipeText()
-		
-        //recipeText.text = recipeContents + recipeInstruction
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		recipeText.text = "" //Hack 1/2: Delete standard text
+	}
 	
 	private func buildRecipeText() -> NSAttributedString {
 		let myString = recipeName + "\n" + recipeContents + recipeInstruction
-		let myAttributes: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 25.0)!,
+		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 26.0)!,
 		                                   NSForegroundColorAttributeName: UIColor.red]
+		let myAttributesStandardText: [String: Any] = [NSFontAttributeName: UIFont(name: "Arial", size: 20.0)!,
+		                                   NSForegroundColorAttributeName: UIColor.black]
 		let myAttrString = NSMutableAttributedString(string: myString)
-		let myRange = NSRange(location: 0, length: recipeName.characters.count)
-		
-		myAttrString.addAttributes(myAttributes, range: myRange)
+		let myRangeStandardText = NSRange(location: 0, length: myAttrString.length)
+		let myRangeHeadline = NSRange(location: 0, length: recipeName.characters.count)
+		myAttrString.addAttributes(myAttributesStandardText, range: myRangeStandardText)
+		myAttrString.addAttributes(myAttributesHeadline, range: myRangeHeadline)
 		return myAttrString
 	}
 	
-    override func viewDidAppear(_ animated: Bool) {
-    }
+	override func viewDidAppear(_ animated: Bool) {
+		recipeText.attributedText = buildRecipeText() //Hack 2/2: First line of text is displayed
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

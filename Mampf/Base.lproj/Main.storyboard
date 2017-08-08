@@ -69,15 +69,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsL-8L-v85">
-                                <rect key="frame" x="0.0" y="20" width="375" height="33"/>
-                                <accessibility key="accessibilityConfiguration" identifier="recipeName"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-gL-8zH">
-                                <rect key="frame" x="16" y="61" width="343" height="512"/>
+                                <rect key="frame" x="16" y="28" width="343" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="recipeText">
                                     <bool key="isElement" value="NO"/>
@@ -87,11 +80,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-ft-50Q">
-                                <rect key="frame" x="0.0" y="623" width="100" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DTS-0n-Fhm"/>
-                                    <constraint firstAttribute="width" constant="100" id="yHU-6L-dEA"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="585" width="49" height="30"/>
                                 <state key="normal" title="Zurück"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Iew-MH-Yyy"/>
@@ -100,22 +89,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PRu-gL-8zH" firstAttribute="top" secondItem="WsL-8L-v85" secondAttribute="bottom" constant="8" symbolic="YES" id="5Wr-XQ-j4S"/>
-                            <constraint firstItem="WsL-8L-v85" firstAttribute="top" secondItem="yfL-5O-lEm" secondAttribute="bottom" id="BAA-mC-HLU"/>
-                            <constraint firstAttribute="bottom" secondItem="9q8-ft-50Q" secondAttribute="bottom" id="BFg-1Z-fP3"/>
-                            <constraint firstItem="PRu-gL-8zH" firstAttribute="leading" secondItem="txv-Tw-0Zd" secondAttribute="leadingMargin" id="IyV-0p-cos"/>
-                            <constraint firstItem="WsL-8L-v85" firstAttribute="leading" secondItem="txv-Tw-0Zd" secondAttribute="leading" id="OU2-mi-RDm"/>
-                            <constraint firstAttribute="trailing" secondItem="WsL-8L-v85" secondAttribute="trailing" id="Thy-ff-Kmr"/>
-                            <constraint firstItem="dXY-uE-t0F" firstAttribute="top" secondItem="PRu-gL-8zH" secondAttribute="bottom" constant="50" id="k2G-3h-ijQ"/>
-                            <constraint firstItem="PRu-gL-8zH" firstAttribute="trailing" secondItem="txv-Tw-0Zd" secondAttribute="trailingMargin" id="rsC-Mp-kz3"/>
-                            <constraint firstItem="9q8-ft-50Q" firstAttribute="leading" secondItem="txv-Tw-0Zd" secondAttribute="leading" id="xk9-ge-cRu"/>
+                            <constraint firstItem="9q8-ft-50Q" firstAttribute="top" secondItem="PRu-gL-8zH" secondAttribute="bottom" constant="8" symbolic="YES" id="9tX-ic-Tak"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PRu-gL-8zH" secondAttribute="leading" id="QdO-Ih-NgY"/>
+                            <constraint firstItem="PRu-gL-8zH" firstAttribute="top" secondItem="yfL-5O-lEm" secondAttribute="bottom" constant="8" symbolic="YES" id="Ras-qP-Fbv"/>
+                            <constraint firstItem="dXY-uE-t0F" firstAttribute="top" secondItem="9q8-ft-50Q" secondAttribute="bottom" constant="8" symbolic="YES" id="SxZ-tR-eJp"/>
+                            <constraint firstItem="9q8-ft-50Q" firstAttribute="leading" secondItem="txv-Tw-0Zd" secondAttribute="leadingMargin" id="UTe-6B-vCU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PRu-gL-8zH" secondAttribute="trailing" id="Wrt-0D-Xet"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="recipeText" destination="PRu-gL-8zH" id="GFt-l0-oYh"/>
-                        <outlet property="recipeTitle" destination="WsL-8L-v85" id="FQP-Gg-wwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NB4-Ia-6HE" userLabel="First Responder" sceneMemberID="firstResponder"/>

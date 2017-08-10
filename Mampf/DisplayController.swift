@@ -24,9 +24,11 @@ class DisplayController: UIViewController {
 	
 	private func buildRecipeText() -> NSAttributedString {
 		let myString = recipeName + "\n" + recipeContents + recipeInstruction
-		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 26.0)!,
+//		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 26.0)!,
+//		                                   NSForegroundColorAttributeName: UIColor.red]
+		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline),
 		                                   NSForegroundColorAttributeName: UIColor.red]
-		let myAttributesStandardText: [String: Any] = [NSFontAttributeName: UIFont(name: "Arial", size: 20.0)!,
+		let myAttributesStandardText: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body),
 		                                   NSForegroundColorAttributeName: UIColor.black]
 		let myAttrString = NSMutableAttributedString(string: myString)
 		let myRangeStandardText = NSRange(location: 0, length: myAttrString.length)

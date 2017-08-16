@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F63C6601F36411D00F0E3F7 /* recipes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1F63C65F1F36411D00F0E3F7 /* recipes.csv */; };
+		1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C851D1F443B7B00F87C79 /* Recipe.swift */; };
 		1F9F351D1F19F82100B2FABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F351C1F19F82100B2FABF /* AppDelegate.swift */; };
 		1F9F351F1F19F82100B2FABF /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F351E1F19F82100B2FABF /* SelectionController.swift */; };
 		1F9F35221F19F82100B2FABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9F35201F19F82100B2FABF /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		1F63C65F1F36411D00F0E3F7 /* recipes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes.csv; sourceTree = "<group>"; };
+		1F9C851D1F443B7B00F87C79 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		1F9F35191F19F82100B2FABF /* Mampf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mampf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9F351C1F19F82100B2FABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9F351E1F19F82100B2FABF /* SelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1F9F35411F19FDFA00B2FABF /* DisplayController.swift */,
 				1F9F35201F19F82100B2FABF /* Main.storyboard */,
 				1F9F35441F1A225C00B2FABF /* Cookbook.swift */,
+				1F9C851D1F443B7B00F87C79 /* Recipe.swift */,
 				1F63C65F1F36411D00F0E3F7 /* recipes.csv */,
 				1F9F35261F19F82100B2FABF /* Assets.xcassets */,
 				1F9F35281F19F82100B2FABF /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 				1F9F35421F19FDFA00B2FABF /* DisplayController.swift in Sources */,
 				1F9F35451F1A225C00B2FABF /* Cookbook.swift in Sources */,
 				1F9F351F1F19F82100B2FABF /* SelectionController.swift in Sources */,
+				1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */,
 				1F9F351D1F19F82100B2FABF /* AppDelegate.swift in Sources */,
 				1F9F35251F19F82100B2FABF /* Mampf.xcdatamodeld in Sources */,
 			);

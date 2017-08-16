@@ -9,45 +9,60 @@
 import Foundation
 
 struct Cookbook {
-    private var recipeDictionary = [String: [String]]()
+    private var recipeDictionary = [String: Recipe]()
     
     init() {
-        recipeDictionary = readCSVFile()
+        importRecipies()
+    }
+    
+    func getRecipe(id: String) -> Recipe? {
+        return recipeDictionary[id]
     }
  
-    func getRecipeInstructions(id: String) -> String {
-        return recipeDictionary[id]![1]
+    func getRecipeInstruction(id: String) -> String? {
+        return recipeDictionary[id]?.instruction
     }
-    func getRecipeIngredients(id: String) -> String {
-        return recipeDictionary[id]![0]
+    func getRecipeIngredients(id: String) -> String? {
+        return recipeDictionary[id]?.ingredients
     }
     
     func getRecipeList() -> [String] {
+        print(recipeDictionary.keys.sorted())
         return Array(recipeDictionary.keys.sorted())
     }
     
-    private func readCSVFile() -> [String: [String]] {
-        var fulltext = String()
-        var recipeDict = [String: [String]]()
+    private func readCSVFile() -> String? {
+        var fullText: String?
         let path = Bundle.main.path(forResource: "recipes", ofType: "csv")
         do {
             //reading
-            fulltext = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+            fullText = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
         }
         catch {/* error handling*/
             print("error occured")
             print(error.localizedDescription)
         }
-        let delimeter = "\r\n"
-        let newString: [String] = fulltext.components(separatedBy: delimeter)
-        for i in 0..<newString.count
-        {
-            var recipeDescription: [String] = newString[i].components(separatedBy: ";")
-            recipeDescription[1] = recipeDescription[1].replacingOccurrences(of: ",", with: "\n")
-            recipeDescription[1] = recipeDescription[1].appending("\n\n")
-            recipeDict[recipeDescription[0]] = [recipeDescription[1], recipeDescription[2]]
-            //print(newString[i])
+        return fullText
+    }
+    
+    private mutating func importRecipies() {
+        let rawText = readCSVFile()
+        
+        if rawText != nil {
+            let delimeter = "\r\n"
+            let recipeStrings: [String] = rawText!.components(separatedBy: delimeter)
+            for i in 0..<recipeStrings.count
+            {
+                let recipeParts = recipeStrings[i].components(separatedBy: ";")
+                let recipeName = recipeParts[0]
+                let recipeIngredients = recipeParts[1].replacingOccurrences(of: ",", with: "\n") + "\n\n"
+                let recipeInstruction = recipeParts[2]
+                
+                let recipe = Recipe(name: recipeName, ingredients: recipeIngredients, instruction: recipeInstruction)
+                if recipe.name != nil {
+                    recipeDictionary[recipe.name!] = recipe
+                }
+            }
         }
-        return recipeDict
     }
 }

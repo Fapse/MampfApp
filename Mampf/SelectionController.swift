@@ -11,37 +11,40 @@ import UIKit
 class SelectionController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var cookbook = Cookbook()
-    private var recipes = [String]()
+    private var recipeNames = [String]()
     private var selection: Int = 0
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return recipes.count
+        return recipeNames.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
-        recipeCell.textLabel?.text = recipes[indexPath.row]
+        recipeCell.textLabel?.text = recipeNames[indexPath.row]
         return recipeCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        //print(indexPath.row)
         selection = indexPath.row
-        performSegue(withIdentifier: "ShowRecipeDetail", sender: self)
+        if cookbook.getRecipe(id: recipeNames[selection]) != nil {
+            performSegue(withIdentifier: "ShowRecipeDetail", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let recipeDisplayController = segue.destination as! DisplayController
-        recipeDisplayController.recipeName = recipes[selection]
-        recipeDisplayController.recipeInstruction = cookbook.getRecipeInstructions(id: recipes[selection])
-        recipeDisplayController.recipeContents = cookbook.getRecipeIngredients(id: recipes[selection])
+        recipeDisplayController.recipeName = recipeNames[selection]
+        recipeDisplayController.recipeInstruction = cookbook.getRecipeInstruction(id: recipeNames[selection])!
+        recipeDisplayController.recipeContents = cookbook.getRecipeIngredients(id: recipeNames[selection])!
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipes = cookbook.getRecipeList()
+        recipeNames = cookbook.getRecipeList()
+        print(recipeNames)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

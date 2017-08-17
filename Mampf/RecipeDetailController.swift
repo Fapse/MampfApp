@@ -2,40 +2,30 @@
 //  RecipeDetailController.swift
 //  Mampf
 //
-//  Created by Fabian Braig on 15.07.17.
+//  Created by Fabian Braig on 17.08.17.
 //  Copyright © 2017 Fabian Braig. All rights reserved.
 //
 
 import UIKit
 
 class RecipeDetailController: UIViewController {
+    
 
-    @IBOutlet weak var recipeText: UITextView!
+    @IBOutlet weak var recipeNameView: UITextView!
+    @IBOutlet weak var recipeIngredientsView: UITextView!
+    @IBOutlet weak var recipeInstructionView: UITextView!
+    
     var recipeName = String()
+    var recipeIngredients = String()
     var recipeInstruction = String()
-    var recipeContents = String()	
-        
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		recipeText.attributedText = buildRecipeText()
-	}
-	
-	private func buildRecipeText() -> NSAttributedString {
-		let myString = recipeName + "\n" + recipeContents + recipeInstruction
-		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline),
-		                                   NSForegroundColorAttributeName: UIColor.red]
-		let myAttributesStandardText: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body),
-		                                   NSForegroundColorAttributeName: UIColor.black]
-		let myAttrString = NSMutableAttributedString(string: myString)
-		let myRangeStandardText = NSRange(location: 0, length: myAttrString.length)
-		let myRangeHeadline = NSRange(location: 0, length: recipeName.characters.count)
-		myAttrString.addAttributes(myAttributesStandardText, range: myRangeStandardText)
-		myAttrString.addAttributes(myAttributesHeadline, range: myRangeHeadline)
-		return myAttrString
-	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-	}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        recipeNameView.text = recipeName
+        recipeIngredientsView.text = recipeIngredients
+        recipeInstructionView.text = recipeInstruction
+        // Do any additional setup after loading the view.
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

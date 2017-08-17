@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-xh-V1w">
-                                <rect key="frame" x="0.0" y="40" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="recipeCell" id="RbN-BC-tds">
@@ -50,61 +49,86 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="sBb-to-8FG" kind="show" identifier="ShowRecipeDetail" id="5D1-NA-ZGx"/>
+                        <segue destination="cke-ZG-VJy" kind="show" identifier="ShowRecipeDetail" id="unt-Bk-vuv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="37.331334332833585"/>
+            <point key="canvasLocation" x="-270" y="36"/>
         </scene>
         <!--Recipe Detail Controller-->
-        <scene sceneID="7SD-Dt-Hn5">
+        <scene sceneID="cJC-Ck-dSc">
             <objects>
-                <viewController id="sBb-to-8FG" customClass="RecipeDetailController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cke-ZG-VJy" customClass="RecipeDetailController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yfL-5O-lEm"/>
-                        <viewControllerLayoutGuide type="bottom" id="dXY-uE-t0F"/>
+                        <viewControllerLayoutGuide type="top" id="5dx-76-IYA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hnv-gY-i0w"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="txv-Tw-0Zd">
+                    <view key="view" contentMode="scaleToFill" id="Kqg-m1-WgC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-gL-8zH">
-                                <rect key="frame" x="16" y="28" width="343" height="549"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration" identifier="recipeText">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-ft-50Q">
-                                <rect key="frame" x="16" y="585" width="53" height="30"/>
-                                <state key="normal" title="Zurück!"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Iew-MH-Yyy"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCE-Xe-8FK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-Cp-fNG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="98y-ne-cc1">
+                                                <rect key="frame" x="0.0" y="0.0" width="10" height="46"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-Ii-c99">
+                                                <rect key="frame" x="0.0" y="56" width="10" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rds-Pi-YXD">
+                                                <rect key="frame" x="0.0" y="106" width="10" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6z-D4-Lto">
+                                                <rect key="frame" x="0.0" y="156" width="63" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Zurück"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="H6g-68-z7n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Yl5-Cp-fNG" secondAttribute="bottom" constant="20" symbolic="YES" id="1X9-3n-YtR"/>
+                                    <constraint firstItem="Yl5-Cp-fNG" firstAttribute="leading" secondItem="uCE-Xe-8FK" secondAttribute="leading" id="MDQ-Fa-Jft"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yl5-Cp-fNG" secondAttribute="trailing" id="XaU-ps-eJM"/>
+                                    <constraint firstItem="Yl5-Cp-fNG" firstAttribute="top" secondItem="uCE-Xe-8FK" secondAttribute="top" id="yfm-oV-bSD"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9q8-ft-50Q" firstAttribute="top" secondItem="PRu-gL-8zH" secondAttribute="bottom" constant="8" symbolic="YES" id="9tX-ic-Tak"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="PRu-gL-8zH" secondAttribute="leading" id="QdO-Ih-NgY"/>
-                            <constraint firstItem="PRu-gL-8zH" firstAttribute="top" secondItem="yfL-5O-lEm" secondAttribute="bottom" constant="8" symbolic="YES" id="Ras-qP-Fbv"/>
-                            <constraint firstItem="dXY-uE-t0F" firstAttribute="top" secondItem="9q8-ft-50Q" secondAttribute="bottom" constant="8" symbolic="YES" id="SxZ-tR-eJp"/>
-                            <constraint firstItem="9q8-ft-50Q" firstAttribute="leading" secondItem="txv-Tw-0Zd" secondAttribute="leadingMargin" id="UTe-6B-vCU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PRu-gL-8zH" secondAttribute="trailing" id="Wrt-0D-Xet"/>
+                            <constraint firstItem="uCE-Xe-8FK" firstAttribute="bottom" secondItem="Hnv-gY-i0w" secondAttribute="top" id="Bsp-sx-sOS"/>
+                            <constraint firstItem="uCE-Xe-8FK" firstAttribute="leading" secondItem="Kqg-m1-WgC" secondAttribute="leading" id="Mmj-RK-sjo"/>
+                            <constraint firstAttribute="trailing" secondItem="uCE-Xe-8FK" secondAttribute="trailing" id="RGx-5K-1Bh"/>
+                            <constraint firstItem="uCE-Xe-8FK" firstAttribute="top" secondItem="Kqg-m1-WgC" secondAttribute="top" id="Zy3-91-NV8"/>
+                            <constraint firstItem="Yl5-Cp-fNG" firstAttribute="width" secondItem="Kqg-m1-WgC" secondAttribute="width" id="sDF-bc-2J0"/>
                         </constraints>
                     </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="recipeText" destination="PRu-gL-8zH" id="GFt-l0-oYh"/>
+                        <outlet property="recipeIngredientsView" destination="pe9-Ii-c99" id="7fS-cH-pxt"/>
+                        <outlet property="recipeInstructionView" destination="rds-Pi-YXD" id="CBk-fj-t1y"/>
+                        <outlet property="recipeNameView" destination="98y-ne-cc1" id="iJS-mD-tXZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NB4-Ia-6HE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgt-yK-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573.60000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="757.60000000000002" y="-27.436281859070466"/>
         </scene>
     </scenes>
 </document>

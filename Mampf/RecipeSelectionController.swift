@@ -37,12 +37,14 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         let recipeDetailController = segue.destination as! RecipeDetailController
         recipeDetailController.recipeName = recipeNames[selection]
         recipeDetailController.recipeInstruction = cookbook.getRecipeInstruction(id: recipeNames[selection])!
-        recipeDetailController.recipeContents = cookbook.getRecipeIngredients(id: recipeNames[selection])!
+        recipeDetailController.recipeIngredients = cookbook.getRecipeIngredients(id: recipeNames[selection])!
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeNames = cookbook.getRecipeList()
+        if let tempRecipeList = cookbook.getRecipeList() {
+            recipeNames = tempRecipeList
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectionController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RecipeSelectionController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var cookbook = Cookbook()
     private var recipeNames = [String]()
@@ -27,7 +27,6 @@ class SelectionController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(indexPath.row)
         selection = indexPath.row
         if cookbook.getRecipe(id: recipeNames[selection]) != nil {
             performSegue(withIdentifier: "ShowRecipeDetail", sender: self)
@@ -35,16 +34,17 @@ class SelectionController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let recipeDisplayController = segue.destination as! DisplayController
-        recipeDisplayController.recipeName = recipeNames[selection]
-        recipeDisplayController.recipeInstruction = cookbook.getRecipeInstruction(id: recipeNames[selection])!
-        recipeDisplayController.recipeContents = cookbook.getRecipeIngredients(id: recipeNames[selection])!
+        let recipeDetailController = segue.destination as! RecipeDetailController
+        recipeDetailController.recipeName = recipeNames[selection]
+        recipeDetailController.recipeInstruction = cookbook.getRecipeInstruction(id: recipeNames[selection])!
+        recipeDetailController.recipeIngredients = cookbook.getRecipeIngredients(id: recipeNames[selection])!
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeNames = cookbook.getRecipeList()
-        print(recipeNames)
+        if let tempRecipeList = cookbook.getRecipeList() {
+            recipeNames = tempRecipeList
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -52,7 +52,5 @@ class SelectionController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

@@ -26,8 +26,7 @@ struct Cookbook {
         return recipeDictionary[id]?.ingredients
     }
     
-    func getRecipeList() -> [String] {
-        print(recipeDictionary.keys.sorted())
+    func getRecipeList() -> [String]? {
         return Array(recipeDictionary.keys.sorted())
     }
     
@@ -47,7 +46,6 @@ struct Cookbook {
     
     private mutating func importRecipies() {
         let rawText = readCSVFile()
-        
         if rawText != nil {
             let delimeter = "\r\n"
             let recipeStrings: [String] = rawText!.components(separatedBy: delimeter)
@@ -55,7 +53,7 @@ struct Cookbook {
             {
                 let recipeParts = recipeStrings[i].components(separatedBy: ";")
                 let recipeName = recipeParts[0]
-                let recipeIngredients = recipeParts[1].replacingOccurrences(of: ",", with: "\n") + "\n\n"
+                let recipeIngredients = recipeParts[1].replacingOccurrences(of: ",", with: "\n")
                 let recipeInstruction = recipeParts[2]
                 
                 let recipe = Recipe(name: recipeName, ingredients: recipeIngredients, instruction: recipeInstruction)

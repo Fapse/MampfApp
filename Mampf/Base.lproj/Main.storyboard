@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Selection Controller-->
+        <!--Recipe Selection Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SelectionController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecipeSelectionController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="-260" y="37.331334332833585"/>
         </scene>
-        <!--Display Controller-->
+        <!--Recipe Detail Controller-->
         <scene sceneID="7SD-Dt-Hn5">
             <objects>
-                <viewController id="sBb-to-8FG" customClass="DisplayController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sBb-to-8FG" customClass="RecipeDetailController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yfL-5O-lEm"/>
                         <viewControllerLayoutGuide type="bottom" id="dXY-uE-t0F"/>

@@ -1,5 +1,5 @@
 //
-//  DisplayController.swift
+//  RecipeDetailController.swift
 //  Mampf
 //
 //  Created by Fabian Braig on 15.07.17.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class DisplayController: UIViewController {
+class RecipeDetailController: UIViewController {
 
     @IBOutlet weak var recipeText: UITextView!
     var recipeName = String()
     var recipeInstruction = String()
-    var recipeContents = String()
-	var test = UIScrollView()
-	
+    var recipeContents = String()	
         
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,8 +22,6 @@ class DisplayController: UIViewController {
 	
 	private func buildRecipeText() -> NSAttributedString {
 		let myString = recipeName + "\n" + recipeContents + recipeInstruction
-//		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont(name: "Chalkduster", size: 26.0)!,
-//		                                   NSForegroundColorAttributeName: UIColor.red]
 		let myAttributesHeadline: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline),
 		                                   NSForegroundColorAttributeName: UIColor.red]
 		let myAttributesStandardText: [String: Any] = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body),

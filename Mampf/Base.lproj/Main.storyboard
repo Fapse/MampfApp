@@ -76,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="619"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-Cp-fNG">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="177"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="310"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-ne-cc1">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
@@ -85,20 +85,26 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4o-gI-9fg">
+                                                        <rect key="frame" x="0.0" y="51" width="343" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="mWs-ff-2Zh"/>
+                                                        </constraints>
+                                                    </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-Ii-c99">
-                                                        <rect key="frame" x="0.0" y="51" width="10" height="40"/>
+                                                        <rect key="frame" x="0.0" y="184" width="10" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rds-Pi-YXD">
-                                                        <rect key="frame" x="0.0" y="96" width="10" height="40"/>
+                                                        <rect key="frame" x="0.0" y="229" width="10" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6z-D4-Lto">
-                                                        <rect key="frame" x="0.0" y="141" width="63" height="36"/>
+                                                        <rect key="frame" x="0.0" y="274" width="63" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Zurück"/>
                                                         <connections>
@@ -108,6 +114,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="98y-ne-cc1" secondAttribute="trailing" id="Bhn-sA-fTb"/>
+                                                    <constraint firstItem="P4o-gI-9fg" firstAttribute="trailing" secondItem="98y-ne-cc1" secondAttribute="trailing" id="exS-06-cQY"/>
                                                     <constraint firstItem="98y-ne-cc1" firstAttribute="top" secondItem="Yl5-Cp-fNG" secondAttribute="top" id="woe-QA-epv"/>
                                                     <constraint firstItem="98y-ne-cc1" firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="xTy-zp-Bxp"/>
                                                 </constraints>
@@ -140,6 +147,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recipeImageView" destination="P4o-gI-9fg" id="WPT-nH-xgv"/>
                         <outlet property="recipeIngredientsView" destination="pe9-Ii-c99" id="7fS-cH-pxt"/>
                         <outlet property="recipeInstructionView" destination="rds-Pi-YXD" id="CBk-fj-t1y"/>
                         <outlet property="recipeNameView" destination="98y-ne-cc1" id="iJS-mD-tXZ"/>
@@ -147,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgt-yK-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.60000000000002" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="594.39999999999998" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>

@@ -29,17 +29,9 @@ class RecipeDetailController: UIViewController {
         let image = UIImage(named: recipeName)
         if image != nil {
             recipeImageView.image = image
-            print("Bild geladen")
         } else {
             recipeImageView.removeFromSuperview()
-            print("Bild nicht geladen")
         }
-        //recipeImageView.image = UIImage(named: recipeName)
-/*        if recipeImage != nil {
-            recipeImageView.image = recipeImage
-            print("recipeImage loaded")
-        }
-        // Do any additional setup after loading the view.*/
     }
 
     override func didReceiveMemoryWarning() {

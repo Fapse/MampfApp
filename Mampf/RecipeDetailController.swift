@@ -11,6 +11,7 @@ import UIKit
 class RecipeDetailController: UIViewController {
     
 
+    @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeNameView: UITextView!
     @IBOutlet weak var recipeIngredientsView: UITextView!
     @IBOutlet weak var recipeInstructionView: UITextView!
@@ -24,7 +25,13 @@ class RecipeDetailController: UIViewController {
         recipeNameView.text = recipeName
         recipeIngredientsView.text = recipeIngredients
         recipeInstructionView.text = recipeInstruction
-        // Do any additional setup after loading the view.
+        print("now load file: \(recipeName)")
+        let image = UIImage(named: recipeName)
+        if image != nil {
+            recipeImageView.image = image
+        } else {
+            recipeImageView.removeFromSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {

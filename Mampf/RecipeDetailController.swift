@@ -10,7 +10,6 @@ import UIKit
 
 class RecipeDetailController: UIViewController {
     
-
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeNameView: UITextView!
     @IBOutlet weak var recipeIngredientsView: UITextView!
@@ -19,6 +18,10 @@ class RecipeDetailController: UIViewController {
     var recipeName = String()
     var recipeIngredients = String()
     var recipeInstruction = String()
+
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        performSegue(withIdentifier: "ShowRecipeSelection", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

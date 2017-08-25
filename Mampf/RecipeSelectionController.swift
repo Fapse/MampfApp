@@ -22,6 +22,12 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
+        
+        let image = UIImage(named: recipeNames[indexPath.row])
+        if image != nil {
+            recipeCell.imageView?.image = image
+        }
+        
         recipeCell.textLabel?.text = recipeNames[indexPath.row]
         return recipeCell
     }

@@ -13,7 +13,7 @@
         <!--Recipe Selection Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecipeSelectionController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="RecipeSelectionController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,16 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-xh-V1w">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-xh-V1w">
                                 <rect key="frame" x="0.0" y="40" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="recipeCell" id="RbN-BC-tds">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="recipeCell" textLabel="c9N-up-pjr" rowHeight="50" style="IBUITableViewCellStyleDefault" id="RbN-BC-tds" customClass="RecipeTableViewCell" customModule="Mampf" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RbN-BC-tds" id="TGk-mo-NWW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c9N-up-pjr">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -50,17 +59,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="cke-ZG-VJy" kind="show" identifier="ShowRecipeDetail" id="unt-Bk-vuv"/>
+                        <segue destination="cke-ZG-VJy" kind="show" identifier="ShowRecipeDetail" animates="NO" id="unt-Bk-vuv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="36"/>
+            <point key="canvasLocation" x="-271.19999999999999" y="35.532233883058474"/>
         </scene>
         <!--Recipe Detail Controller-->
         <scene sceneID="cJC-Ck-dSc">
             <objects>
-                <viewController id="cke-ZG-VJy" customClass="RecipeDetailController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="cke-ZG-VJy" customClass="RecipeDetailController" customModule="Mampf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dx-76-IYA"/>
                         <viewControllerLayoutGuide type="bottom" id="Hnv-gY-i0w"/>
@@ -108,7 +117,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Zurück"/>
                                                         <connections>
-                                                            <segue destination="BYZ-38-t0r" kind="show" id="H6g-68-z7n"/>
+                                                            <segue destination="BYZ-38-t0r" kind="show" identifier="ShowRecipeSelection" id="H6g-68-z7n"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -129,6 +138,7 @@
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uCE-Xe-8FK" secondAttribute="trailing" id="6hW-ee-Yph"/>
                                     <constraint firstItem="uCE-Xe-8FK" firstAttribute="leading" secondItem="lSR-iG-gRS" secondAttribute="leading" id="W9d-gU-87k"/>
@@ -136,6 +146,9 @@
                                     <constraint firstItem="Yl5-Cp-fNG" firstAttribute="width" secondItem="lSR-iG-gRS" secondAttribute="width" id="ohz-Cc-LHz"/>
                                     <constraint firstItem="uCE-Xe-8FK" firstAttribute="top" secondItem="lSR-iG-gRS" secondAttribute="top" id="oqJ-d4-fzt"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5xI-pS-Oiq" appends="YES" id="hp5-MQ-k2M"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -154,6 +167,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgt-yK-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5xI-pS-Oiq">
+                    <connections>
+                        <action selector="swipeRight:" destination="cke-ZG-VJy" id="n8T-Ac-zPJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="594.39999999999998" y="35.532233883058474"/>
         </scene>

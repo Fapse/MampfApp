@@ -29,6 +29,14 @@ struct Cookbook {
     func getRecipeList() -> [String]? {
         return Array(recipeDictionary.keys.sorted())
     }
+    func getFilteredRecipeList(_ searchTerm: String) -> [String]? {
+        var tempArray = [String]()
+        let tempDict = recipeDictionary.filter({return $0.value.description.contains(searchTerm)})
+        for i in tempDict {
+            tempArray.append(i.key)
+        }
+        return tempArray
+    }
     
     private func readCSVFile() -> String? {
         var fullText: String?

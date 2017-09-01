@@ -40,13 +40,13 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
             performSegue(withIdentifier: "ShowRecipeDetail", sender: self)
         }
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //recipeSearchBar.resignFirstResponder()
         if recipeSearchBar.text == nil || recipeSearchBar.text == "" {
             isSearching = false
             displayedRecipeNames = allRecipeNames
-            view.endEditing(true)
+            self.view.endEditing(true)
             //recipeSearchBar.resignFirstResponder()
         } else {
             isSearching = true
@@ -56,7 +56,8 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         }
         recipeTableView.reloadData()
     }
-    /*
+    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         print("Ende gedrückt")
@@ -65,14 +66,16 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         displayedRecipeNames = allRecipeNames
         recipeTableView.reloadData()
         isSearching = false
-    }*/
-    
+    }
+    /*
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("Hello")
-        self.view.endEditing(true)
         isSearching = false
-        searchBar.resignFirstResponder()
-    }
+        recipeSearchBar.resignFirstResponder()
+        self.view.endEditing(true)
+        displayedRecipeNames = allRecipeNames
+        recipeTableView.reloadData()
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct Recipe
+struct Recipe : CustomStringConvertible
 {
     let name: String?
     let ingredients: String?
     let instruction: String?
+    
+    var description: String {
+        return "Recipe"
+            + ((name != nil) ? name! : "")
+            + ((ingredients != nil) ? ingredients! : "")
+            + ((instruction != nil) ? instruction! : "")
+    }
 }

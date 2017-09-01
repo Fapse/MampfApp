@@ -19,16 +19,11 @@ class RecipeDetailController: UIViewController {
     var recipeIngredients = String()
     var recipeInstruction = String()
 
-    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        performSegue(withIdentifier: "ShowRecipeSelection", sender: self)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeNameView.text = recipeName
         recipeIngredientsView.text = recipeIngredients
         recipeInstructionView.text = recipeInstruction
-        print("now load file: \(recipeName)")
         let image = UIImage(named: recipeName)
         if image != nil {
             recipeImageView.image = image

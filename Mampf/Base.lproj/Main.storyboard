@@ -25,7 +25,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-xh-V1w">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="MPA-qp-ftx">
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="MPA-qp-ftx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,7 +64,13 @@
                             <constraint firstItem="7AU-xh-V1w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v37-HZ-EyV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IRD-T0-GF2"/>
+                    <navigationItem key="navigationItem" id="IRD-T0-GF2">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="qDd-cS-un2">
+                            <connections>
+                                <action selector="recipeSearchInit:" destination="BYZ-38-t0r" id="CSV-7Z-qZP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="recipeSearchBar" destination="MPA-qp-ftx" id="w2h-N6-W2e"/>
                         <outlet property="recipeTableView" destination="7AU-xh-V1w" id="VW3-mw-z3R"/>

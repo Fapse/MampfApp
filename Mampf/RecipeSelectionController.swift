@@ -9,33 +9,16 @@
 import UIKit
 
 class RecipeSelectionController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    @IBOutlet weak var recipeSearchBar: UISearchBar!
     @IBOutlet weak var recipeTableView: UITableView!
     private var cookbook = Cookbook()
     private var allRecipeNames = [String]()
     private var selection: Int = 0
     private var displayedRecipeNames = [String]()
-    private var isSearching: Bool = false {
-		willSet {
-			if newValue {
-				// search mode activated
-				recipeSearchBar.isHidden = false
-				recipeSearchBar.becomeFirstResponder()
-			} else {
-				// search cancelled
-				recipeSearchBar.isHidden = true
-				recipeSearchBar.text = ""
-				recipeSearchBar.resignFirstResponder()
-				displayedRecipeNames = allRecipeNames
-				recipeTableView.reloadData()
-			}
-			print("will set isSearching to \(newValue)")
-		}
-	}
 	
   	@IBAction func recipeSearchInit(_ sender: UIBarButtonItem) {
-		print("i am pressed")
-		isSearching = !isSearching
+		let searchController = UISearchController(searchResultsController: nil)
+		searchController.searchBar.delegate = self
+		present(searchController, animated: true, completion: nil)
 	}
 	
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -51,6 +34,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
             recipeCell.imageView?.image = image
         }
         recipeCell.textLabel?.text = displayedRecipeNames[indexPath.row]
+		recipeCell.selectionStyle = UITableViewCellSelectionStyle.none
         return recipeCell
     }
     
@@ -61,12 +45,21 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 	
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		print("Search bar text changed")
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		if let tempRecipeList = cookbook.getFilteredRecipeList(searchText) {
 			displayedRecipeNames = tempRecipeList
 			recipeTableView.reloadData()
 		}
+	}
+	
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+		dismiss(animated: true, completion: nil)
+	}
+	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		displayedRecipeNames = allRecipeNames
+		recipeTableView.reloadData()
 	}
 	
     override func viewDidLoad() {
@@ -75,8 +68,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
             allRecipeNames = tempRecipeList
             displayedRecipeNames = allRecipeNames
         }
-        recipeSearchBar.delegate = self
-		recipeSearchBar.isHidden = true
+		recipeTableView.tableFooterView = UIView() // show no empty cells
     }
 
     override func didReceiveMemoryWarning() {

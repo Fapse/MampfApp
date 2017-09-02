@@ -35,7 +35,9 @@ struct Cookbook {
 			return getRecipeList()
 		}
         var tempArray = [String]()
-        let tempDict = recipeDictionary.filter({return $0.value.description.contains(searchTerm)})
+        let tempDict = recipeDictionary.filter(
+			{return $0.value.description.localizedCaseInsensitiveContains(searchTerm)}
+		)
         for i in tempDict {
             tempArray.append(i.key)
         }

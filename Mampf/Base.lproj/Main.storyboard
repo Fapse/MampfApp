@@ -25,15 +25,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-xh-V1w">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="MPA-qp-ftx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                <color key="separatorColor" red="0.99495393037796021" green="0.271686851978302" blue="0.14621931314468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="recipeCell" textLabel="c9N-up-pjr" rowHeight="65" style="IBUITableViewCellStyleDefault" id="RbN-BC-tds" customClass="RecipeTableViewCell" customModule="Mampf" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="54" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="10" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RbN-BC-tds" id="TGk-mo-NWW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
@@ -48,6 +43,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -64,9 +60,14 @@
                             <constraint firstItem="7AU-xh-V1w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v37-HZ-EyV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IRD-T0-GF2"/>
+                    <navigationItem key="navigationItem" id="IRD-T0-GF2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qDd-cS-un2">
+                            <connections>
+                                <action selector="recipeSearchInit:" destination="BYZ-38-t0r" id="CSV-7Z-qZP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="recipeSearchBar" destination="MPA-qp-ftx" id="w2h-N6-W2e"/>
                         <outlet property="recipeTableView" destination="7AU-xh-V1w" id="VW3-mw-z3R"/>
                         <segue destination="cke-ZG-VJy" kind="show" identifier="ShowRecipeDetail" id="unt-Bk-vuv"/>
                     </connections>
@@ -88,13 +89,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSR-iG-gRS">
-                                <rect key="frame" x="16" y="0.0" width="343" height="647"/>
+                                <rect key="frame" x="16" y="72" width="343" height="595"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCE-Xe-8FK">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="595"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-Cp-fNG">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="269"/>
+                                                <rect key="frame" x="0.0" y="-40" width="343" height="269"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-ne-cc1">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
@@ -123,28 +124,28 @@
                                                     </textView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="98y-ne-cc1" secondAttribute="trailing" id="Bhn-sA-fTb"/>
-                                                    <constraint firstItem="P4o-gI-9fg" firstAttribute="trailing" secondItem="98y-ne-cc1" secondAttribute="trailing" id="exS-06-cQY"/>
-                                                    <constraint firstItem="98y-ne-cc1" firstAttribute="top" secondItem="Yl5-Cp-fNG" secondAttribute="top" id="woe-QA-epv"/>
-                                                    <constraint firstItem="98y-ne-cc1" firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="xTy-zp-Bxp"/>
+                                                    <constraint firstItem="98y-ne-cc1" firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="T0g-Df-Tmn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="98y-ne-cc1" secondAttribute="trailing" id="TeH-EZ-pyo"/>
+                                                    <constraint firstItem="P4o-gI-9fg" firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="mpz-Hx-OdY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="P4o-gI-9fg" secondAttribute="trailing" id="rBz-lR-i4c"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Yl5-Cp-fNG" secondAttribute="bottom" id="QKh-qE-yhF"/>
-                                            <constraint firstItem="Yl5-Cp-fNG" firstAttribute="top" secondItem="uCE-Xe-8FK" secondAttribute="top" id="XCz-dg-oao"/>
-                                            <constraint firstItem="Yl5-Cp-fNG" firstAttribute="leading" secondItem="uCE-Xe-8FK" secondAttribute="leading" id="cwB-0Y-P56"/>
-                                            <constraint firstAttribute="trailing" secondItem="Yl5-Cp-fNG" secondAttribute="trailing" id="vqq-Xr-XC8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yl5-Cp-fNG" secondAttribute="trailing" id="2uc-7C-PdX"/>
+                                            <constraint firstAttribute="top" secondItem="Yl5-Cp-fNG" secondAttribute="top" constant="40" id="dAv-9K-HAQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yl5-Cp-fNG" secondAttribute="bottom" id="ehJ-Fw-D6y"/>
+                                            <constraint firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="ja7-zS-MFu"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="Yl5-Cp-fNG" firstAttribute="width" secondItem="lSR-iG-gRS" secondAttribute="width" id="1Ga-Nm-mZz"/>
                                     <constraint firstAttribute="trailing" secondItem="uCE-Xe-8FK" secondAttribute="trailing" id="6hW-ee-Yph"/>
                                     <constraint firstItem="uCE-Xe-8FK" firstAttribute="leading" secondItem="lSR-iG-gRS" secondAttribute="leading" id="W9d-gU-87k"/>
                                     <constraint firstAttribute="bottom" secondItem="uCE-Xe-8FK" secondAttribute="bottom" id="bjF-az-6hJ"/>
-                                    <constraint firstItem="Yl5-Cp-fNG" firstAttribute="width" secondItem="lSR-iG-gRS" secondAttribute="width" id="ohz-Cc-LHz"/>
                                     <constraint firstItem="uCE-Xe-8FK" firstAttribute="top" secondItem="lSR-iG-gRS" secondAttribute="top" id="oqJ-d4-fzt"/>
                                 </constraints>
                             </view>
@@ -153,8 +154,8 @@
                         <constraints>
                             <constraint firstItem="lSR-iG-gRS" firstAttribute="trailing" secondItem="Kqg-m1-WgC" secondAttribute="trailingMargin" id="Pyq-z9-dyO"/>
                             <constraint firstItem="lSR-iG-gRS" firstAttribute="leading" secondItem="Kqg-m1-WgC" secondAttribute="leadingMargin" id="RdF-i9-zDz"/>
-                            <constraint firstItem="lSR-iG-gRS" firstAttribute="top" secondItem="5dx-76-IYA" secondAttribute="bottom" constant="-64" id="W6i-dF-S4r"/>
-                            <constraint firstAttribute="bottom" secondItem="lSR-iG-gRS" secondAttribute="bottom" constant="20" symbolic="YES" id="mx6-lK-Qpt"/>
+                            <constraint firstItem="lSR-iG-gRS" firstAttribute="top" secondItem="5dx-76-IYA" secondAttribute="bottom" constant="8" symbolic="YES" id="W6i-dF-S4r"/>
+                            <constraint firstAttribute="bottom" secondItem="lSR-iG-gRS" secondAttribute="bottom" id="mx6-lK-Qpt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -166,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgt-yK-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533.5" y="35.5"/>
+            <point key="canvasLocation" x="1463" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eGU-yt-O50">

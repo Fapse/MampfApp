@@ -162,6 +162,7 @@
 				TargetAttributes = {
 					1F9F35181F19F82100B2FABF = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TE36759D36;
 						ProvisioningStyle = Automatic;
 					};
 					1F9F352F1F19F82100B2FABF = {
@@ -361,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TE36759D36;
 				INFOPLIST_FILE = Mampf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fapse.Mampf;
@@ -374,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TE36759D36;
 				INFOPLIST_FILE = Mampf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fapse.Mampf;

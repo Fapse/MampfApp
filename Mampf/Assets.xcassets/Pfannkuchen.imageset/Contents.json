@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Käsespatzen.png",
+      "filename" : "IMG_0865@2x.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "IMG_0865@3x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "IMG_0865@4x.jpg",
       "scale" : "3x"
     }
   ],

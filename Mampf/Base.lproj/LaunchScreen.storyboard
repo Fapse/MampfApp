@@ -22,26 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mampf!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB6-6X-dcf">
-                                <rect key="frame" x="131" y="200" width="151" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="151" id="viJ-Yg-NcN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MampfLogo" translatesAutoresizingMaskIntoConstraints="NO" id="7te-zI-XkL">
+                                <rect key="frame" x="37" y="87" width="341" height="341"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cB6-6X-dcf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.6" id="4wd-RI-loK"/>
-                            <constraint firstItem="cB6-6X-dcf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="smF-Bs-iJF"/>
+                            <constraint firstItem="7te-zI-XkL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="BE3-6h-qam"/>
+                            <constraint firstItem="7te-zI-XkL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TMG-Fv-dKi"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MampfLogo" width="341" height="341"/>
+    </resources>
 </document>

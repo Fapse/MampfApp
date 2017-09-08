@@ -32,10 +32,17 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         let image = UIImage(named: displayedRecipeNames[indexPath.row])
         if image != nil {
             recipeCell.imageView?.image = image
-        }
+        } else {
+			recipeCell.imageView?.image = UIImage(named: "MampfLogo")
+		}
         recipeCell.textLabel?.text = displayedRecipeNames[indexPath.row]
+		if indexPath.row % 2 == 0 {
+			recipeCell.backgroundColor = UIColor.white
+		} else {
+			recipeCell.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.1)
+		}
 		recipeCell.selectionStyle = UITableViewCellSelectionStyle.none
-        return recipeCell
+		return recipeCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,6 +75,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
             allRecipeNames = tempRecipeList
             displayedRecipeNames = allRecipeNames
         }
+		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MampfLogoSmallWhite"))
 		recipeTableView.tableFooterView = UIView() // show no empty cells
     }
 

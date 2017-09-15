@@ -72,6 +72,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+	
+	// MARK: - Core Data Convenience
+	// Added by Fabian Braig
+	// Found at: https://goo.gl/eTpObV
+	
+	static var persistentContainer: NSPersistentContainer {
+		return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+	}
+	// Access container like:
+	// let coreDataContainer = AppDelegate.persistentContainer
+	
+	static var viewContext: NSManagedObjectContext {
+		return persistentContainer.viewContext
+	}
+	// Access context like this:
+	// let context = AppDelegate.viewContext
 
     // MARK: - Core Data Saving support
 

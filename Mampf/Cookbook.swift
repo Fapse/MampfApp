@@ -6,6 +6,7 @@
 //  Copyright © 2017 Fabian Braig. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 struct Cookbook {
@@ -25,6 +26,9 @@ struct Cookbook {
     func getRecipeIngredients(id: String) -> String? {
         return recipeDictionary[id]?.ingredients
     }
+	func getRecipeImage(id: String) -> UIImage? {
+		return recipeDictionary[id]?.image
+	}
     
     func getRecipeList() -> [String]? {
         return Array(recipeDictionary.keys.sorted())
@@ -69,8 +73,9 @@ struct Cookbook {
                 let recipeName = recipeParts[0]
                 let recipeIngredients = recipeParts[1].replacingOccurrences(of: ",", with: "\n")
                 let recipeInstruction = recipeParts[2]
+				let recipeImage = UIImage(named: recipeName)
                 
-                let recipe = Recipe(name: recipeName, ingredients: recipeIngredients, instruction: recipeInstruction)
+                let recipe = Recipe(name: recipeName, ingredients: recipeIngredients, instruction: recipeInstruction, image: recipeImage)
                 if recipe.name != nil {
                     recipeDictionary[recipe.name!] = recipe
                 }

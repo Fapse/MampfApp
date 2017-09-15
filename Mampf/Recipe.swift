@@ -6,6 +6,7 @@
 //  Copyright © 2017 Fabian Braig. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 struct Recipe : CustomStringConvertible
@@ -13,6 +14,7 @@ struct Recipe : CustomStringConvertible
     let name: String?
     let ingredients: String?
     let instruction: String?
+	var image: UIImage?
     
     var description: String {
         return "Recipe"

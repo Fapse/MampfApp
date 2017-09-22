@@ -28,11 +28,12 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
-		if let tmp_image = cookbook.getRecipeImage(id: displayedRecipeNames[indexPath.row]) {
-		recipeCell.imageView?.image = tmp_image
+		let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
+		
+		if let tmp_image = cookbook.getRecipe(id: displayedRecipeNames[indexPath.row])?.image {
+			recipeCell.imageView?.image = tmp_image
 		} else {
-		recipeCell.imageView?.image = UIImage(named: "MampfLogo")
+			recipeCell.imageView?.image = UIImage(named: "MampfLogo")
 		}
 		
         recipeCell.textLabel?.text = displayedRecipeNames[indexPath.row]
@@ -53,7 +54,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
     }
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		if let tempRecipeList = cookbook.getFilteredRecipeList(searchText) {
+		if let tempRecipeList = cookbook.getRecipeList(filterBy: searchText) {
 			displayedRecipeNames = tempRecipeList
 			recipeTableView.reloadData()
 		}

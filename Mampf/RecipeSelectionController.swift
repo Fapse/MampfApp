@@ -37,6 +37,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
 		}
 		
         recipeCell.textLabel?.text = displayedRecipeNames[indexPath.row]
+		
 		if indexPath.row % 2 == 0 {
 			recipeCell.backgroundColor = UIColor.white
 		} else {

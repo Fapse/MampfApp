@@ -12,8 +12,7 @@ import CoreData
 
 struct Cookbook {
 	private let context = AppDelegate.viewContext
-    private var recipeDictionary = [String: Recipe]()
-    
+	
     init() {
 		let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -62,11 +61,7 @@ struct Cookbook {
 		request.sortDescriptors = [sortDescriptor]
 		
 		let tempRecipes = try? context.fetch(request)
-		
-		guard tempRecipes != nil else {
-		return recipesArray
-		}
-		
+
 		for tempRecipe in tempRecipes! {
 			recipesArray.append(tempRecipe.name!)
 		}
@@ -82,7 +77,7 @@ struct Cookbook {
             fullText = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
         }
         catch {/* error handling*/
-            print("error occured")
+            print("error occured while reading from csv-file")
             print(error.localizedDescription)
         }
         return fullText

@@ -104,6 +104,7 @@ struct Cookbook {
 					print("Now saving image to core data")
 					recipe.image = recipeImage
 				}
+				try? context.save()
 			}
 		}
 	}

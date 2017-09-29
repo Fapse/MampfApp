@@ -28,14 +28,16 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
-        let image = UIImage(named: displayedRecipeNames[indexPath.row])
-        if image != nil {
-            recipeCell.imageView?.image = image
-        } else {
+		let recipeCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "recipeCell")
+		
+		if let tmp_image = cookbook.getRecipe(id: displayedRecipeNames[indexPath.row])?.image {
+			recipeCell.imageView?.image = tmp_image
+		} else {
 			recipeCell.imageView?.image = UIImage(named: "MampfLogo")
 		}
+		
         recipeCell.textLabel?.text = displayedRecipeNames[indexPath.row]
+		
 		if indexPath.row % 2 == 0 {
 			recipeCell.backgroundColor = UIColor.white
 		} else {
@@ -53,7 +55,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
     }
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		if let tempRecipeList = cookbook.getFilteredRecipeList(searchText) {
+		if let tempRecipeList = cookbook.getRecipeList(filterBy: searchText) {
 			displayedRecipeNames = tempRecipeList
 			recipeTableView.reloadData()
 		}
@@ -86,8 +88,6 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let recipeDetailController = segue.destination as! RecipeDetailController
-        recipeDetailController.recipeName = displayedRecipeNames[selection]
-        recipeDetailController.recipeInstruction = cookbook.getRecipeInstruction(id: displayedRecipeNames[selection])!
-        recipeDetailController.recipeIngredients = cookbook.getRecipeIngredients(id: displayedRecipeNames[selection])!
+		recipeDetailController.recipe = cookbook.getRecipe(id: displayedRecipeNames[selection])
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vFf-0k-nAL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vFf-0k-nAL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,7 +95,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="595"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yl5-Cp-fNG">
-                                                <rect key="frame" x="0.0" y="-40" width="343" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-ne-cc1">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
@@ -105,19 +105,22 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4o-gI-9fg">
-                                                        <rect key="frame" x="0.0" y="51" width="343" height="128"/>
+                                                        <rect key="frame" x="0.0" y="51" width="343" height="256"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="mWs-ff-2Zh"/>
+                                                            <constraint firstAttribute="height" constant="128" id="mWs-ff-2Zh">
+                                                                <variation key="heightClass=compact-widthClass=compact" constant="256"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" constant="256"/>
+                                                            </constraint>
                                                         </constraints>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-Ii-c99">
-                                                        <rect key="frame" x="0.0" y="184" width="10" height="40"/>
+                                                        <rect key="frame" x="0.0" y="312" width="10" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rds-Pi-YXD">
-                                                        <rect key="frame" x="0.0" y="229" width="10" height="40"/>
+                                                        <rect key="frame" x="0.0" y="357" width="10" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -133,7 +136,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Yl5-Cp-fNG" secondAttribute="trailing" id="2uc-7C-PdX"/>
-                                            <constraint firstAttribute="top" secondItem="Yl5-Cp-fNG" secondAttribute="top" constant="40" id="dAv-9K-HAQ"/>
+                                            <constraint firstAttribute="top" secondItem="Yl5-Cp-fNG" secondAttribute="top" id="dAv-9K-HAQ"/>
                                             <constraint firstAttribute="bottom" secondItem="Yl5-Cp-fNG" secondAttribute="bottom" id="ehJ-Fw-D6y"/>
                                             <constraint firstAttribute="leading" secondItem="Yl5-Cp-fNG" secondAttribute="leading" id="ja7-zS-MFu"/>
                                         </constraints>
@@ -175,7 +178,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vFf-0k-nAL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qzq-CP-WKY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.99955970048904419" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -6,18 +6,23 @@
 //  Copyright © 2017 Fabian Braig. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
-struct Recipe : CustomStringConvertible
+class Recipe : NSManagedObject
 {
-    let name: String?
-    let ingredients: String?
-    let instruction: String?
-    
-    var description: String {
-        return "Recipe"
-            + ((name != nil) ? name! : "")
-            + ((ingredients != nil) ? ingredients! : "")
-            + ((instruction != nil) ? instruction! : "")
-    }
+	var image: UIImage? {
+		get {
+			var tempImage: UIImage?
+			if imageData != nil {
+				tempImage = UIImage(data: imageData! as Data)
+			}
+			return tempImage
+		}
+		set(newImage) {
+			if newImage != nil {
+				imageData = UIImagePNGRepresentation(newImage!)! as NSData
+			}
+		}
+	}
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F1C31331F62B44100D934A1 /* recipes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C31321F62B44100D934A1 /* recipes.csv */; };
+		1F91FC7B1F6BCAC800484C14 /* Cookbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F91FC7A1F6BCAC800484C14 /* Cookbook.swift */; };
 		1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C851D1F443B7B00F87C79 /* Recipe.swift */; };
 		1F9C85201F4599E300F87C79 /* RecipeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */; };
 		1F9F351D1F19F82100B2FABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F351C1F19F82100B2FABF /* AppDelegate.swift */; };
@@ -17,8 +18,6 @@
 		1F9F35271F19F82100B2FABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9F35261F19F82100B2FABF /* Assets.xcassets */; };
 		1F9F352A1F19F82100B2FABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9F35281F19F82100B2FABF /* LaunchScreen.storyboard */; };
 		1F9F35351F19F82100B2FABF /* MampfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F35341F19F82100B2FABF /* MampfTests.swift */; };
-		1F9F35451F1A225C00B2FABF /* Cookbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F35441F1A225C00B2FABF /* Cookbook.swift */; };
-		1F9F35461F1A225C00B2FABF /* Cookbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9F35441F1A225C00B2FABF /* Cookbook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1F1C31321F62B44100D934A1 /* recipes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes.csv; sourceTree = "<group>"; };
+		1F91FC7A1F6BCAC800484C14 /* Cookbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cookbook.swift; sourceTree = "<group>"; };
 		1F9C851D1F443B7B00F87C79 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailController.swift; sourceTree = "<group>"; };
 		1F9F35191F19F82100B2FABF /* Mampf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mampf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +46,6 @@
 		1F9F35301F19F82100B2FABF /* MampfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MampfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9F35341F19F82100B2FABF /* MampfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MampfTests.swift; sourceTree = "<group>"; };
 		1F9F35361F19F82100B2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F9F35441F1A225C00B2FABF /* Cookbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cookbook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +91,7 @@
 				1F9F351E1F19F82100B2FABF /* RecipeSelectionController.swift */,
 				1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */,
 				1F9F35201F19F82100B2FABF /* Main.storyboard */,
-				1F9F35441F1A225C00B2FABF /* Cookbook.swift */,
+				1F91FC7A1F6BCAC800484C14 /* Cookbook.swift */,
 				1F9C851D1F443B7B00F87C79 /* Recipe.swift */,
 				1F1C31321F62B44100D934A1 /* recipes.csv */,
 				1F9F35261F19F82100B2FABF /* Assets.xcassets */,
@@ -217,10 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9F35451F1A225C00B2FABF /* Cookbook.swift in Sources */,
 				1F9F351F1F19F82100B2FABF /* RecipeSelectionController.swift in Sources */,
 				1F9C85201F4599E300F87C79 /* RecipeDetailController.swift in Sources */,
 				1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */,
+				1F91FC7B1F6BCAC800484C14 /* Cookbook.swift in Sources */,
 				1F9F351D1F19F82100B2FABF /* AppDelegate.swift in Sources */,
 				1F9F35251F19F82100B2FABF /* Mampf.xcdatamodeld in Sources */,
 			);
@@ -230,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9F35461F1A225C00B2FABF /* Cookbook.swift in Sources */,
 				1F9F35351F19F82100B2FABF /* MampfTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

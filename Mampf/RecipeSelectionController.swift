@@ -7,13 +7,35 @@
 //
 
 import UIKit
+import CoreData
+//import Foundation
+
 
 class RecipeSelectionController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var recipeTableView: UITableView!
     private var cookbook = Cookbook()
     private var allRecipeNames = [String]()
     private var selection: Int = 0
-    private var displayedRecipeNames = [String]()
+	private var displayedRecipeNames = [String]()
+
+	var frc: NSFetchedResultsController<Recipe>!
+	
+	private func initializeFetchedResultsController() {
+		let context = AppDelegate.viewContext
+		let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+		let predicate = NSPredicate(value: true)
+		request.predicate = predicate
+		request.sortDescriptors = [sortDescriptor]
+		frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+		do {
+			try frc.performFetch()
+		} catch {
+			fatalError("Failed to fetch entities: \(error)")
+		}
+		
+		print("Finished initializeFetchedResultsController")
+	}
 	
   	@IBAction func recipeSearchInit(_ sender: UIBarButtonItem) {
 		let searchController = UISearchController(searchResultsController: nil)
@@ -79,6 +101,7 @@ class RecipeSelectionController: UIViewController, UITableViewDataSource, UITabl
         }
 		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MampfLogoSmallWhite"))
 		recipeTableView.tableFooterView = UIView() // show no empty cells
+		initializeFetchedResultsController()
     }
 
     override func didReceiveMemoryWarning() {

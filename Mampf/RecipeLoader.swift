@@ -31,7 +31,44 @@ struct RecipeLoader {
         } else {
             print("There are already some recipes in CoreData")
         }
+        loadJSONData()
     }
+	
+    private static func loadJSONData() {
+		let url = URL(string: "file:///Volumes/Public/Mampf/recipes7.json")
+		do {
+			let success = try url?.checkResourceIsReachable()
+			guard success == true else {
+				print ("Could not check for new recipes")
+				return
+			}
+		} catch let error
+		{
+			print(error.localizedDescription)
+		}
+		let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+			guard error == nil else {
+				//print(error?.localizedDescription)
+				print ("Could not load new recipes")
+				return
+			}
+						if let content = data {
+				do {
+					let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+					print (myJson)
+					if let recipes = myJson["recipes"] as? NSDictionary
+					{
+						print(recipes)
+						print(recipes["Tortillas"].debugDescription)
+					}
+				} catch let error
+				{
+					print(error.localizedDescription)
+				}
+			}
+		}
+		task.resume()
+	}
     
     private static func readCSVFile() -> String? {
         var fullText: String?

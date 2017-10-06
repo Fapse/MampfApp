@@ -31,7 +31,8 @@ struct RecipeLoader {
         } else {
             print("There are already some recipes in CoreData")
         }
-        loadJSONData()
+        //loadJSONData()
+        JsonRecipeLoader.loadJsonRecipes()
     }
 	
     private static func loadJSONData() {

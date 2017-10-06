@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F1C31331F62B44100D934A1 /* recipes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C31321F62B44100D934A1 /* recipes.csv */; };
+		1F769F451F8761C4000265FE /* JsonRecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F769F441F8761C4000265FE /* JsonRecipeLoader.swift */; };
+		1F769F461F8761C4000265FE /* JsonRecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F769F441F8761C4000265FE /* JsonRecipeLoader.swift */; };
 		1F91FC7B1F6BCAC800484C14 /* RecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F91FC7A1F6BCAC800484C14 /* RecipeLoader.swift */; };
 		1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C851D1F443B7B00F87C79 /* Recipe.swift */; };
 		1F9C85201F4599E300F87C79 /* RecipeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */; };
@@ -32,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		1F1C31321F62B44100D934A1 /* recipes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes.csv; sourceTree = "<group>"; };
+		1F769F441F8761C4000265FE /* JsonRecipeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRecipeLoader.swift; sourceTree = "<group>"; };
 		1F91FC7A1F6BCAC800484C14 /* RecipeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeLoader.swift; sourceTree = "<group>"; };
 		1F9C851D1F443B7B00F87C79 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailController.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 				1F9C851F1F4599E300F87C79 /* RecipeDetailController.swift */,
 				1F9F35201F19F82100B2FABF /* Main.storyboard */,
 				1F91FC7A1F6BCAC800484C14 /* RecipeLoader.swift */,
+				1F769F441F8761C4000265FE /* JsonRecipeLoader.swift */,
 				1F9C851D1F443B7B00F87C79 /* Recipe.swift */,
 				1F1C31321F62B44100D934A1 /* recipes.csv */,
 				1F9F35261F19F82100B2FABF /* Assets.xcassets */,
@@ -220,6 +224,7 @@
 			files = (
 				1F9F351F1F19F82100B2FABF /* RecipeSelectionController.swift in Sources */,
 				1F9C85201F4599E300F87C79 /* RecipeDetailController.swift in Sources */,
+				1F769F451F8761C4000265FE /* JsonRecipeLoader.swift in Sources */,
 				1F9C851E1F443B7B00F87C79 /* Recipe.swift in Sources */,
 				1F91FC7B1F6BCAC800484C14 /* RecipeLoader.swift in Sources */,
 				1F9F351D1F19F82100B2FABF /* AppDelegate.swift in Sources */,
@@ -231,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F769F461F8761C4000265FE /* JsonRecipeLoader.swift in Sources */,
 				1F9F35351F19F82100B2FABF /* MampfTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
